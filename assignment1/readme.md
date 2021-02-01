@@ -9,7 +9,7 @@
 
 **Group No-**"8"
 
-**Faculty Name-**"MD. Javed sir"
+**Faculty Name-**"Md. Javed sir"
 
 **Mentor Name-** "Md. Meraz"
 
