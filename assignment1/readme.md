@@ -18,7 +18,7 @@
 
 ---
 ## Problem Statement
-Sort a matrix such that ecery row, column and diagnols are sorted.
+Sort a matrix such that every row, column and diagnols are sorted.
 
 ---
 ## How to use code
