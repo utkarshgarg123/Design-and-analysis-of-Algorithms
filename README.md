@@ -1,4 +1,4 @@
-# DAA ASSIGNMENTS
+# DAA ASSIGNMENT
 
 
 **Team Members**
@@ -10,7 +10,7 @@
 
 **Group No-**"8"
 
-**Faculty Name-**"Md. Javed sir"
+**Faculty Name-**"Md. Javed"
 
 **Mentor Name-** "Md. Meraz"
 
