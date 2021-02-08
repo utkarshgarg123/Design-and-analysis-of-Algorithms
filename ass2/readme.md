@@ -35,7 +35,7 @@ https://github.com/utkarshgarg123/daa.git
 
 Run the code
 ```
-gcc main.c
+g++ main.cpp
 ./a.out
 ```
 
@@ -45,7 +45,7 @@ input.txt
 ```
 output : 
 ```
-The number of words in ascending or descending order are : 60.
+The number of words in ascending or descending order are : 97
 [Finished in 0.3s] 
 ```
 ---
@@ -54,7 +54,7 @@ The number of words in ascending or descending order are : 60.
 
 
 ### Theory
-We are using a file system in our algorithm asour input is stored in the file. Our algorithm will first of all read the input from the txt file. We have created the “input.txt” file and all the input strings are inside this file, then sorting is applied on the string in asending and descending order after which if any of the resultant string matches with input string we increment the count.
+We are using a file system in our algorithm as our input is stored in the file. Our algorithm will first of all read the input from the txt file. We have created the “input.txt” file and all the input strings are inside this file, then sorting is applied on the string in asending and descending order after which if any of the resultant string matches with input string we increment the count.
 
 ---
 
