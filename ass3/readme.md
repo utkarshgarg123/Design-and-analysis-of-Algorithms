@@ -55,7 +55,7 @@ Ternary search is a divide and conquer algorithm that can be used to find an ele
 
 ## Analysis
 
-* **Time Complexity :** Firstly, sorting using merge will take ``` O(NLog(N)) ``` time .In ternary search, as the length in wich we have to search for decreases by 1/3 in each recursive call so  worst case time complexity will be : O(Log<sub>3</sub>(n)) .
+* **Time Complexity :** Firstly, sorting using merge will take ``` O(NLog(N)) ``` time .In ternary search, as the length in wich we have to search for decreases by 1/3 in each recursive call so  worst case time complexity will be :```O(Log3(n))``` .
 
     #### Overall Time complexity :
     1. **In Worst Case** : ```O(NLog(N))```
