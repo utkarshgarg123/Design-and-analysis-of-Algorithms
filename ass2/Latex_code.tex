@@ -30,6 +30,7 @@
 \begin{document}
 
 \title{FINDING WORDS IN ASCENDING OR DESCENDING ORDER \\
+\textit{\Large{Indian Institute of Information technology, Allahabad }}\\
 \text{\Large{DAA ASSIGNMENT-2 , GROUP 8}}
 }
 \author{\IEEEauthorblockN{Swaraj Bhosle}
@@ -51,7 +52,7 @@
 In computer science, the process of searching a 
 string in a given set of strings is known as 
 String Searching. We have created a text file 
-containing at least 1000 valid english words. 
+containing at least $1000$ valid English words. 
 Basically ascending characters in a string 
 means all the characters should be in a 
 alphabetical order i.e from A to Z and the 
@@ -63,30 +64,30 @@ of algorithm designing and analysis.The
 algorithm created is tested for different sample 
 test cases for time complexity, space 
 complexity and accuracy. In our case 
-\\\\ This report further contains - 
+\\ This report further contains - 
 \begin{itemize}
     \item Algorithm Description.
     \item Algorithm And  Analysis.
     \item Time Complexity Analysis 
-    \item Conclusion\\ 
+    \item Conclusion\
 \end{itemize}
 
 \section{ALGORITHM DESIGN}\\
 We are using a file system in our algorithm as 
 our input is stored in the file. Our algorithm 
-will first of all read the input from the txt file. We have created the “input.txt” file and all the input strings are inside this file.\\
+will first of all read the input from the txt file. We have created the \textit{input.txt} file and all the input strings are inside this file.\\
 \\\textbf{Step1 :}
-First thing we will open the “input.txt” file and will read the input for the programme. 
+First thing we will open the \textit{input.txt} file and will read the input for the programme. 
 \\To read the information from a file into your 
 programme we have to use the extraction 
-operator \textgreater\textgreater  just as we use that operator to 
+operator $>>$  just as we use that operator to 
 input information from the keyboard. The only 
 difference is that we use an if stream or of stream object instead of the cin object. 
 \\\\\textbf{Step2 :}
 check whether the file is opened or 
 not. i.e the open fails if the file doesn't exist, or if it can't be read. a failure can be detected with the code like !(logical not) operator 
 \\\\\textbf{Step3 :}
-create the character array of MAX\_SIZE of 1000. We will store the input string from the file into this character array
+create the character array of $MAX\_SIZE$ of $1000$. We will store the input string from the file into this character array
 \\\\\textbf{Step4 :}
 Traverse through each input string 
 from .txt file.
@@ -108,16 +109,14 @@ print the count number.
 \\\\\textbf{Step9 :}
 close the opened file 
 \\\\\textbf{\textit{Advantages of using merge sort:- }}
-\begin{enumerate}
-    \item  It is quicker for larger lists because unlike 
+ It is quicker for larger lists because unlike 
 insertion and bubble sort it doesn't go through the 
 whole list several times. 
-    \item It has a consistent running time, carries out 
+It has a consistent running time, carries out 
 different bits with similar  times in a stage. 
-\end{enumerate}
+
 
 \section{ALGORITHM AND ANALYSIS}\\
-
 \begin{algorithm}[H] 
     \caption{Algorithm}
     \KwIn{string from the text 
@@ -128,50 +127,47 @@ have ascending or descending characters}
     \SetKwFunction{FMain}{Main}
     \SetKwProg{Fn}{Function}{:}{}
     \Fn{\FMain{}}{
-           \\\textit{//Declare an input file steam}
+           \\\textit{Declare an input file steam}
          \\\textbf{ifstream inFile}
-          \\\textit{//open the file stream}
+          \\\textit{open the file stream}
         \\\textbf{inFile.open("input.txt")}; 
         
-        \\\textit{//Check that the file was opened }
-         \If{$(file can’t open)$}{
-                $Exit the code$\;
+        \\\textit{Check that the file was opened }\\
+         \If{$($ file can’t open $)$}{
+                $Exit$\;
             }
-        \\\textit{//create the char array of MAX_SIZE} 
+        \\\textit{create the char array of MAX\_SIZE} 
           \\\textbf{char str[MAX\_SIZE]} 
-        \\\textit{//assign count equal to zero} 
+        \\\textit{assign count equal to zero} 
          \\\textbf{ count = 0} 
          
-         \While{\textit{inFile >> str}}
+         \While{\textit{inFile $>>$ str}}
          {
-           \\\textit{//Store the length of string in l }
+           \\\textit{Store the length of string in l }
              \\\textbf{ n = strlen(str) }
-             \\\textit{//create two char array of MAX_SIZE}
-              \\\textbf{  char asc[MAX\_SIZE]  }
-               \\\textbf{  char  dsc[MAX\_SIZE]  }
-            \\\textit{//store str string in both asc and dsc array }
+             \\\textit{create two char array of MAX_SIZE}
+              \\\textbf{char asc[MAX\_SIZE]  }
+               \\\textbf{char dsc[MAX\_SIZE]  }
+            \\\textit{store str string in both asc and dsc array }
               
                  \For{$i \gets 0$ \textbf{ to } $n$}
                  {
-                 $asc[i]$ = $str[i]$
-                 \\$dsc[i]$ = $str[i]$
+                 $asc[i]$ = $str[i]$\\
+                 $dsc[i]$ = $str[i]$
                 }
             
         
-         \\\textit{//Sort the asc char array in ascending order }
-        \\\textbf{merge_sort(asc, asc + l) }
-           \\ \textit{//Sort the dsc array in descending order} 
-        \\\textbf{merge_sort(dsc, dsc + l, greater<char>());} 
-        \\\textit{//compare the str string with dsc and asc array} 
-        \\\textbf{if(strcmp(str, asc) == 0 || strcmp(str, dsc) == 0) }
+         \\\textit{Sort asc array in ascending order }
+        \\\textbf{merge\_sort(asc, asc + l) }
+           \\ \textit{Sort the dsc array in descending order} 
+        \\\textbf{merge\_sort(dsc,dsc+l,greater$<$char$>()$);} 
+        \\\textit{compare the str string with dsc and asc array} 
+        \\\textbf{if $(str==asc $ or $ str==dsc)$ }
           \\\textbf{count++; }
-             \\\textit{//if it matches any one of them then count it. }
+             \\\textit{if it matches any one of them then count it. }
              
     } 
-       \\\textit{//print the count }
-      \\\textbf{cout<<count }
-      \\ \textit{//close the file} 
-      \\\textbf{inFile.close();} 
+       \\\textbf{print count }
 
  }
 \end{algorithm}
@@ -180,12 +176,32 @@ have ascending or descending characters}
 
    
 \section{TIME CALCULATION }\\
+\begin{tikzpicture}[trim left=1cm]
+\begin{axis}[
+    title={Complexity analysis for Naive \begin{math} \mathcal{O}(n\log{}n)\end{math}) algorithm},
+    xlabel={Number of strings},
+    ylabel={Time(in ms) [t]},
+     xmin=0, xmax=100,
+    ymin=0, ymax=100,
+    xtick={0,10,20,30,40,50,60,70,80,90,100},
+    ytick={0,10,20,30,40,50,60,70,80,90,100}
+]
 
-\graphicspath{ {./images/} }
-\\\\Complexity analysis for algorithm 
-\includegraphics[scale=0.45]{FINDING WORDS IN ASCENDING OR DESCENDING}
+\addplot[
+    color=blue,
+    mark=dot,
+    ]
+    coordinates {
+    (0,0.3)(10,1.4)(18,3.96)(24,6.73)(30,10.3)(40,17.58)(57,34.79)(60,38.49)(70,51.81)(82,70.24)(98,99.5)
+    };
+    \legend{\begin{math} \mathcal{O}(n\log{}n)\end{math}) algorithm}
+   \end{axis}
+   
+\end{tikzpicture}
 
-\begin{center}
+
+
+
  \begin{tabular}{||c c||} 
  \hline
  No. of Words & Execution Time(ms) \\ [1.0ex] 
@@ -199,35 +215,51 @@ have ascending or descending characters}
  1000000 & 1.49021 \\
  \hline
 \end{tabular}
-\end{center}
+
 \\\\
 \section{TIME COMPLEXITY}\\
-Let the average size of all strings be N\\
+Let the average size of all strings be N.
 Then we merge sort the string in ascending and 
 descending order and compare the obtained strings 
 with the original string, and if the string matches 
 with any of the sorted strings then we increment the 
 answer.\\ 
-The time complexity will be O($N\ast logN$) due to the 
+The time complexity will be \begin{math} \mathcal{O}(n\log{}n)\end{math}) due to the 
 merge sort algorithm in a best, average and worst 
 case.\\ 
 The time complexity will be affected due to the 
 merge sort in sorting the 1D array and the total 
-time complexity will become O($N\ast logN$) in 
+time complexity will become \begin{math} \mathcal{O}(n\log{}n)\end{math}) in 
 all the cases i.e. best case, worst case and 
 average. 
-\\\textbf{Best Case : }
-\\O($N) + O($N\ast logN$) + O($N) => O($N\ast logN$)
+\begin{math}
+\end{math}
+\\\\\\\\\textbf{Best Case : }
+
+\begin{math}
+\mathcal{O}(n) + \mathcal{O}(n\log{}n) + \mathcal{O} => \mathcal{O}(n\log{}n)
+\end{math}
 \\\textbf{Average Case : }
-\\O($N) + O($N\ast logN$) + O($N) => O($N\ast logN$)
+
+
+\begin{math}
+\mathcal{O}(n) + \mathcal{O}(n\log{}n) + \mathcal{O} => \mathcal{O}(n\log{}n)
+\end{math}
 \\\textbf{Worst Case : }
-\\O($N) + O($N\ast logN$) + O($N) => O($N\ast logN$)
+
+
+\begin{math}
+\mathcal{O}(n) + \mathcal{O}(n\log{}n) + \mathcal{O} => \mathcal{O}(n\log{}n)
+\end{math}
 \begin{center}
  \begin{tabular}{||c c c||} 
  \hline
-  BEST & AVERAGE & WORST CASE  \\ [0.5ex] 
+  BEST & AVERAGE & WORST CASE  \\  
  \hline\hline
- $N\ast logN$ & $N\ast logN$ & $N\ast logN$ \\ 
+ \begin{math} \mathcal{O}(n\log{}n)
+\end{math} & \begin{math} \mathcal{O}(n\log{}n)
+\end{math} & \begin{math} \mathcal{O}(n\log{}n)
+\end{math} \\ 
  \hline
 \end{tabular}
 \end{center}
@@ -247,8 +279,8 @@ characters.
 
 \section{REFERENCES}
 \begin{enumerate}
-    \item \url{http://www.fredosaurus.com/notes-cpp/io/readtextfile.html}
-    \item \url{https://www.tutorialspoint.com/cplusplus/cpp_files_streams.html }
-    \item \url{https://www.geeksforgeeks.org/program-sort-string-descending-order }
+    \item \url{  http://www.fredosaurus.com/notes-cpp/io/readtextfile.html }
+    \item \url{ https://www.tutorialspoint.com/cplusplus/cpp_files_streams.html }
+    \item \url{ https://www.geeksforgeeks.org/program-sort-string-descending-order}
 \end{enumerate}
 \end{document}
