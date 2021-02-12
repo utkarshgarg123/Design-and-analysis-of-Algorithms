@@ -181,9 +181,9 @@ have ascending or descending characters}
     title={Complexity analysis for Naive \begin{math} \mathcal{O}(n\log{}n)\end{math}) algorithm},
     xlabel={Number of strings},
     ylabel={Time(in ms) [t]},
-     xmin=0, xmax=100,
+     xmin=0, xmax=1000,
     ymin=0, ymax=100,
-    xtick={0,10,20,30,40,50,60,70,80,90,100},
+    xtick={100,200,300,400,500,600,700,800,900,1000},
     ytick={0,10,20,30,40,50,60,70,80,90,100}
 ]
 
@@ -192,7 +192,7 @@ have ascending or descending characters}
     mark=dot,
     ]
     coordinates {
-    (0,0.3)(10,1.4)(18,3.96)(24,6.73)(30,10.3)(40,17.58)(57,34.79)(60,38.49)(70,51.81)(82,70.24)(98,99.5)
+    (0,0.3)(100,1.4)(180,3.96)(240,6.73)(300,10.3)(400,17.58)(570,34.79)(600,38.49)(700,51.81)(820,70.24)(1000,98)
     };
     \legend{\begin{math} \mathcal{O}(n\log{}n)\end{math}) algorithm}
    \end{axis}
@@ -206,14 +206,17 @@ have ascending or descending characters}
  \hline
  No. of Words & Execution Time(ms) \\ [1.0ex] 
  \hline\hline
- 1000 & 0.31939 \\ 
+ 100 & 1.4 \\ 
  \hline
- 10000 & 0.52023 \\
+ 250 & 4 \\
  \hline
- 100000 & 0.87831\\
+ 500 & 34\\
  \hline
- 1000000 & 1.49021 \\
+ 800 & 70 \\
  \hline
+ 1000 & 98 \\
+ \hline
+
 \end{tabular}
 
 \\\\
