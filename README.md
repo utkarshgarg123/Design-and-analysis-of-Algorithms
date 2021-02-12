@@ -8,14 +8,14 @@
 |    IIT2019025  |   Ritesh Raj   | ritesh1731      | 
 |    IIT2019026  |   Utkarsh Garg | Utkarshgarg123  |
 
-**Group No-**"8"
+**Group No :** 8
 
-**Faculty Name-**"Md. Javed"
+**Faculty Name :** Md. Javed
 
-**Mentor Name-** "Md. Meraz"
+**Mentor Name :** Md. Meraz
 
+## Download project
 ```
-#Download project
-git clone https://github.com/utkarshgarg123/daa/
+git clone https://github.com/utkarshgarg123/daa.git
 ```
 
