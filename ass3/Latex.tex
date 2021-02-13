@@ -1,0 +1,193 @@
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{textcomp}
+\usepackage{epsfig}
+\usepackage{algpseudocode}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{pgfplots}
+\usepackage{tikz}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\pgfplotsset{width=10cm,compat=1.9}
+ \usepgfplotslibrary{external}
+
+
+
+\usepackage[linesnumbered,ruled,vlined]{algorithm2e}
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
+\usepackage[ruled,vlined]{algorithm2e}
+
+\tikzexternalize 
+\begin{document}
+
+\title{Ternary search
+ \\
+\textit{\Large{Indian Institute of Information technology, Allahabad }}\\
+\text{\Large{DAA ASSIGNMENT-3 , GROUP 8}}
+}
+\author{\IEEEauthorblockN{Swaraj Bhosle}
+\IEEEauthorblockA{ \text{IIT2019024}}
+\and
+\IEEEauthorblockN{Ritesh Raj}
+\IEEEauthorblockA{ \text{IIT2019025}}
+\and
+\IEEEauthorblockN{Utkarsh Garg}
+\IEEEauthorblockA{ \text{IIT2019026}}
+}
+
+\maketitle
+{\textbf{\textit{Abstract: In this Paper we have devised an algorithm to implement ternary search and  find whether a word is present in a given array or not using ternary search
+\\ }}}
+\maketitle
+
+\section{INTRODUCTION}\\
+A ternary search algorithm is a technique in computer science for finding the minimum or maximum of a unimodal function. A ternary search determines either that the minimum or maximum cannot be in the first third of the domain or that it cannot be in the last third of the domain, then repeats on the remaining two thirds. A ternary search is an example of a divide and conquer algorithm
+
+\\ This report further contains - 
+\begin{itemize}
+    \item Algorithm Description.
+    \item Algorithm And  Analysis.
+    \item Time Complexity Analysis 
+    \item Conclusion\
+\end{itemize}
+
+\section{ALGORITHM DESIGN}\\
+We are given an $array$ of some numbers and we need to find weather an element $x$  is present in the array or not using ternary search.
+\\Steps for implementing the ternary search are as follows :
+\begin{itemize}
+\item Take the input $n$ from the user
+\item Input the $array$ from the user.
+\item Input the element $x$ which is needed to be checked.
+\item Apply Merge sort algorithm to sort the array.
+\item Take two variables $l$ and $r$ in which we store left index and right index.
+\item Call the recursive $ternarySearch$ function.
+\item In each call we calculate the middle two indexes by which we break down the array into $3$ equal parts.
+\item If $x$ is equal to any of $mid1$ or $mid 2$ the we return true.
+\item For each of the three sections check if $x$ lies in that range, if it does then again we call the recursive function, and reduce the searching region.
+\item if we reach the length of $1$ and $x$ is not found we return $false$.
+\item Finally if the recursive function returns $true$ we print element found in the array else print element not found.
+
+\end{itemize}
+
+\\\\\textbf{\textit{Advantages of using merge sort:- }}
+ It is quicker for larger lists because unlike 
+insertion and bubble sort it doesn't go through the 
+whole list several times. 
+It has a consistent running time, carries out 
+different bits with similar  times in a stage. 
+\section{ALGORITHM AND ANALYSIS}\\
+\begin{algorithm}[H]
+      \caption{Algorithm for ternary Sort}
+    \KwIn{Size of array, array and element $x$}
+    \KwOut {True if $x$ is present otherwise false.}
+    \DontPrintSemicolon
+    \SetKwFunction{FMain}{ternarySort}
+    \SetKwProg{Fn}{Function}{:}{}
+    \Fn{\FMain{int $arr$,int $l$,int $r$,int $x$}}{
+       $ mid1 \gets  l+(r-l)/3$;
+        \\$ mid2 \gets  l+(r-l)/3$;
+        
+            \If{$l>r$}{
+            \KwRet $false$}
+            \If{$(arr[mid1] == x$ \textit{ or } $arr[mid2] == x)$}{
+               \KwRet $true$ ;
+            }
+            \ElseIf{$x < ar[mid1]$}{
+		        \KwRet $ternarySearch(l, mid1 - 1, x, ar)$;
+            }
+            \ElseIf{$x < ar[mid1]$}{
+		       \KwRet $ternarySearch(l,mid1-1,x,ar)$;
+            }
+            \ElseIf{$x < ar[mid2]$}{
+		        \KwRet $ternarySearch(mid1+1,mid2-1,x,ar)$;
+            }
+            \Else{
+            \KwRet $ternarySearch(mid2 + 1, r, x, ar)$;
+            }
+
+}
+\end{algorithm}
+% \pagebreak
+
+
+
+
+
+   
+\section{TIME CALCULATION }\\
+\begin{tikzpicture}[trim left=0.3cm]
+\begin{axis}[
+    title={Complexity analysis for Naive \begin{math} \mathcal{O}(n\log_{3}n)\end{math}) algorithm},
+    xlabel={size of input},
+    ylabel={Number of operations},
+     xmin=0, xmax=100,
+    ymin=0, ymax=10,
+    xtick={0,10,20,30,40,50,60,70,80,90,100},
+    ytick={0,1,2,3,4,5,6,7,8,9,10}
+]
+
+\addplot[
+    color=blue,
+    mark=dot,
+    ]
+    coordinates {
+    (0,0)(5,1.451)(22,2.8)(30,3.1)(40,3.362)(60,3.7)(100,4.192);
+    };
+    \legend{\begin{math} \mathcal{O}(\log_{3}n)\end{math}) algorithm}
+   \end{axis}
+   
+\end{tikzpicture}
+
+As the algorithm is logarithmic so it is a quite efficient algorithm, only very few operations are required to perform a check over a large array.
+
+\\\\
+\section{TIME COMPLEXITY}\\
+Let the average size of all strings be N.
+Then we merge sort the string in ascending and 
+descending order and compare the obtained strings 
+with the original string, and if the string matches 
+with any of the sorted strings then we increment the 
+answer.\\ 
+The time complexity will be \begin{math} \mathcal{O}(n\log{}n)\end{math}) due to the 
+merge sort algorithm in a best, average and worst 
+case.\\ 
+The time complexity will be affected due to the 
+merge sort in sorting the 1D array and the total 
+time complexity will become \begin{math} \mathcal{O}(n\log{}n)\end{math}.
+
+Here we study the complexity for ternary Sort,as the average cost of a successful search is about the same as the worst case where an item is not found in the array, both being roughly equal to \begin{math} \mathcal{O}(\log_{3}N)\end{math}. So, the average and the worst case cost of binary search, in big-O notation, is \begin{math} \mathcal{O}(\log_{3}N)\end{math}, the best case is when in the first attempt $x$ is found,so best case time complexity is \begin{math} \mathcal{O}(1)\end{math}.
+
+\begin{center}
+ \begin{tabular}{||c c c||} 
+ \hline
+  BEST & AVERAGE & WORST CASE  \\  
+ \hline\hline
+ \begin{math} \mathcal{O}(1)\end{math} & \begin{math} \mathcal{O}(\log_{3}N)\end{math} & \begin{math} \mathcal{O}(\log_{3}N)\end{math} \\ 
+ \hline
+\end{tabular}
+\end{center}
+
+
+
+\section{CONCLUSION}
+Ternary search is a divide and conquer algorithm that can be used to find an element in an array. It is similar to binary search where we divide the array into two parts but in this algorithm, we divide the given array into three parts and determine which has the key (searched element). We can divide the array into three parts by taking mid1 and mid2 which can be calculated as shown below. Initially, l and r will be equal to 0 and n-1 respectively, where n is the length of the array. \\
+\\
+From the results it can be concluded that Ternary Search Algorithm is working well for all length of input values. It takes lesser CPU time than existing searching algorithm linear search and binary search. In the future more effective searching algorithm can be proposed.
+
+\section{REFERENCES}
+\begin{enumerate}
+    \item \url{  https://doc.lagout.org/Alfred%20V.%20Aho%20-%20Data%20Structures%20and%20Algorithms.pdf }
+    \item \url{ https://web.ist.utl.pt/~fabio.ferreira/material/asa/clrs.pdf }
+    \item \url{ https://www.geeksforgeeks.org/ternary-search/}
+\end{enumerate}
+\end{document}
