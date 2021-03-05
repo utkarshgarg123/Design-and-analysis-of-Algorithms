@@ -55,6 +55,7 @@ void merge_sort(int arr[], int l, int r)
 	merge_sort(arr, m + 1, r);
 	merge(arr, l, m, r);
 }
+
 bool ternary_search(int l, int r, int x, int ar[])
 {
 	// if left index is lagrger than right index return false
@@ -72,6 +73,7 @@ bool ternary_search(int l, int r, int x, int ar[])
 	else
 		return ternary_search(mid2 + 1, r, x, ar);
 }
+
 int main()
 {
 
