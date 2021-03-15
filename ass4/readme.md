@@ -47,11 +47,12 @@ Total Number of such sequnces are 4
 
 ## Theory
 The total number of sequences is the sum of the numberof sequences including m and the number of sequenceswhere m is not included. Thus   the   original   problem   of   finding   number   of sequences   of   length   N   with   max   value   M   can   besubdivided  into  independent  sub  problems  of  finding number  of  sequences  of  length  N  with  max  value  M-1and number of sequences of length N-1 with max value M/2.
+
 ---
 
 ## Analysis
 
-* **Time Complexity :** The time complexity of the solution using DP is ``` O(M*N) ``` as it is the time required for traversing 2 for loops.
+* **Time Complexity :** The time complexity of the solution using DP is ``` O(M*N) ``` as it is the time required for filling the DP array of size M*N.
     #### Overall Time complexity :
     1. **In Worst Case** : ```O(M*N)```
     2. **In Best Case** : ```Ω(M*N)```
