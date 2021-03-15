@@ -46,21 +46,19 @@ Total Number of such sequnces are 4
 
 
 ## Theory
-Ternary search is a divide and conquer algorithm that can be used to find an element in an array, we divide the given array into three parts and determine which has the key. We can divide the array into three parts by taking mid1 and mid2 and subsequently comparing it with key. Initially, l and r will be equal to 0 and n-1 respectively, where n is the length of the array. 
-
+The total number of sequences is the sum of the numberof sequences including m and the number of sequenceswhere m is not included. Thus   the   original   problem   of   finding   number   of sequences   of   length   N   with   max   value   M   can   besubdivided  into  independent  sub  problems  of  finding number  of  sequences  of  length  N  with  max  value  M-1and number of sequences of length N-1 with max value M/2.
 ---
 
 ## Analysis
 
-* **Time Complexity :** The time complexity of the solution using DP is ``` O(M*N) ``` 
-
+* **Time Complexity :** The time complexity of the solution using DP is ``` O(M*N) ``` as it is the time required for traversing 2 for loops.
     #### Overall Time complexity :
     1. **In Worst Case** : ```O(M*N)```
     2. **In Best Case** : ```Ω(M*N)```
 
 
 * **Space Complexity :**
-Here, the DP array will use ```O(M*N)``` space.\
+Here, the DP array will use ```O(M*N)``` space.
     #### Overall Space complexity :
     1. **In Worst Case** : ```O(M*N)```
     2. **In Best Case** : ```Ω(M*N)```
