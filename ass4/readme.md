@@ -71,7 +71,8 @@ Here, the DP array will use ```O(M*N)``` space.
 1. *Introduction to Algorithms ( T.H Cormen )*
 2. https://www.geeksforgeeks.org/sequences-given-length-every-element-equal-twice-previous/ 
 
-3. https://www.geeksforgeeks.org/ternary-search/
+3. https://tutorialspoint.dev/algorithm/dynamic-programming-algorithms/sequences-given-length-every-element-equal-twice-previous
+
 
 ---
 
