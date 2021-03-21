@@ -24,9 +24,9 @@ int TotalNumberOfSequences(int M, int N)
 int main()
 {
     int M, N;
-    cout << "Enter teh value of M : ";
+    cout << "Enter the value of M : ";
     cin >> M;
-    cout << "Enter teh value of N : ";
+    cout << "Enter the value of N : ";
     cin >> N;
     cout << "Total number of possible sequences are " << TotalNumberOfSequences(M, N);
     return 0;
