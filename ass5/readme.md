@@ -71,27 +71,28 @@ its sub-problems.
 
 ## Analysis
 
-* **Time Complexity :** Firstly, sorting using merge will take ``` O(NLog(N)) ``` time .In ternary search, as the length in wich we have to search for decreases by 1/3 in each recursive call so  worst case time complexity will be :```O(Log3(n))``` .
+* **Time Complexity :**  e have found out time complexity to be: ``` O(n*m) ```, as total
+number of comparisons will be in the order of ``` O(n*m) ```.
+
 
     #### Overall Time complexity :
-    1. **In Worst Case** : ```O(NLog(N))```
-    2. **In Best Case** : ```Ω(NLog(N))```
+    1. **In Worst Case** : ``` O(n*m) ```
+    2. **In Best Case** : ``` O(n*m) ```
 
 
 * **Space Complexity :**
-Here, merge sort will use ```O(N)``` space.\
-Ternary search will use ```O(Log3(N))``` in stack due to recursive calls.
-    #### Overall Space complexity :
-    1. **In Worst Case** : ```O(N)```
-    2. **In Best Case** : ```Ω(N)```
+Since, we will need 2 two-dimensional arrays of size n*m
+i.e. ``` O(n*m) ```, and other variables require constant space. So,
+overall space complexity is ``` O(n*m) ```.
+
 
 ---
 
 ## References
 
-1. *Introduction to Algorithms ( T.H Cormen )*
-2. https://en.wikipedia.org/wiki/Ternary_search
-3. https://www.geeksforgeeks.org/ternary-search/
+1. https://www.geeksforgeeks.org/find-maximum-length-snake-sequence/
+2. https://en.wikipedia.org/wiki/Dynamics
+3. https://www.javatpoint.com/dynamic-programming-introduction
 
 ---
 
