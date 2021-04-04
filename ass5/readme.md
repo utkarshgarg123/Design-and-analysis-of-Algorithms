@@ -34,15 +34,16 @@ g++ main.cpp
 
 Input : 
 ```
-Enter size of array : 5
-Enter the array elements : 2 7 32 9 12
-Enter element to be searched for : 9
+Enter size of 2-D array : 2 X 2 
+Enter the elements : 1 2 3
+                     4 5 6
+                     7 8 9
+
 
 ```
 Output : 
 ```
-Element 9 found in array
-[Finished in 0.3s] 
+LENGTH OF LONGEST SNAKE SEQUENCE
 ```
 ---
 
@@ -50,7 +51,21 @@ Element 9 found in array
 
 
 ## Theory
-Ternary search is a divide and conquer algorithm that can be used to find an element in an array, we divide the given array into three parts and determine which has the key. We can divide the array into three parts by taking mid1 and mid2 and subsequently comparing it with key. Initially, l and r will be equal to 0 and n-1 respectively, where n is the length of the array. 
+A matrix of integers of size n*m is given, our algorithm
+should find the longest snake sequence from the matrix. If
+there exist many, it should print any one. There are some
+constraints for making snake sequence,
+• snake sequence is made up of adjacent numbers in the
+grid.
+• for each number, adjacent number on the right or below
+should be +1 or -1 of its value.
+Matrix: Two dimensional arrays are called matrices. Dynamic
+Programming: It is an algorithmic technique for solving
+an optimization problem by breaking it down into simpler
+sub-problems and utilizing the fact that the optimal solution
+to the overall problem depends upon the optimal solution to
+its sub-problems.
+
 
 ---
 
