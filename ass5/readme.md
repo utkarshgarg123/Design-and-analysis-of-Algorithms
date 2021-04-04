@@ -18,7 +18,8 @@
 
 ---
 ## Problem Statement
-Design an algorithm to implement ternary search.
+Find the maximum length snake sequence
+
 
 ---
 ## How to use code
