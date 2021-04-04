@@ -34,7 +34,7 @@ g++ main.cpp
 
 Input : 
 ```
-Enter size of 2-D array : 2 X 2 
+Enter size of 2-D array : 3 X 3 
 Enter the elements : 1 2 3
                      4 5 6
                      7 8 9
@@ -51,13 +51,12 @@ LENGTH OF LONGEST SNAKE SEQUENCE
 
 
 ## Theory
-A matrix of integers of size n*m is given, our algorithm
-should find the longest snake sequence from the matrix. If
+A matrix of integers of size n*m is given, our algorithm should find the longest snake sequence from the matrix. If
 there exist many, it should print any one. There are some
 constraints for making snake sequence,
-• snake sequence is made up of adjacent numbers in the
+  1. snake sequence is made up of adjacent numbers in the
 grid.
-• for each number, adjacent number on the right or below
+  2. for each number, adjacent number on the right or below
 should be +1 or -1 of its value.
 Matrix: Two dimensional arrays are called matrices. Dynamic
 Programming: It is an algorithmic technique for solving
