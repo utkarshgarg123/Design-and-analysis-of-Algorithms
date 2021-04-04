@@ -1,4 +1,5 @@
 \documentclass[conference]{IEEEtran}
+\documentclass{article}
 \IEEEoverridecommandlockouts
 % The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
 \usepackage{cite}
@@ -10,14 +11,13 @@
 \usepackage{textcomp}
 \usepackage{epsfig}
 \usepackage{algpseudocode}
-\usepackage{algorithm}
-\usepackage{algorithmic}
 \usepackage{pgfplots}
 \usepackage{tikz}
 \usepackage{hyperref}
 \usepackage{graphicx}
 \pgfplotsset{width=10cm,compat=1.9}
  \usepgfplotslibrary{external}
+ \graphicspath{ {./images/} }
 
 
 
@@ -30,10 +30,8 @@
 \tikzexternalize 
 \begin{document}
 
-\title{Ternary search
- \\
-\textit{\Large{Indian Institute of Information technology, Allahabad }}\\
-\text{\Large{DAA ASSIGNMENT-3 , GROUP 8}}
+\title{Specific Sequences of given length  \\
+\text{\Large{DAA ASSIGNMENT-4 , GROUP 8}}
 }
 \author{\IEEEauthorblockN{Swaraj Bhosle}
 \IEEEauthorblockA{ \text{IIT2019024}}
@@ -46,90 +44,183 @@
 }
 
 \maketitle
-{\textbf{\textit{Abstract: In this Paper we have devised an algorithm to implement ternary search and  find whether a word is present in a given array or not using ternary search
-\\ }}}
+{\textbf{\textit{Abstract: In this Paper we have devised an algorithm to find the number of possible sequences of specific length (let say n) such that each of the next element is greater than or equal to twice of the previous element but less than or equal to specific number (let say m).\\ 
+}}}
 \maketitle
 
 \section{INTRODUCTION}\\
-A ternary search algorithm is a technique in computer science for finding the minimum or maximum of a unimodal function. A ternary search determines either that the minimum or maximum cannot be in the first third of the domain or that it cannot be in the last third of the domain, then repeats on the remaining two thirds. A ternary search is an example of a divide and conquer algorithm
-
+In this report, we are going to discuss about the particular sequence of given length. We are given two integers m and n.
+We have to find the number of possible sequences of length n such that each of the next element is greater than or equal to twice of the previous element but less than or equal to m.\\
+There should be n elements and value of last element should be at-most m. 
+we are dividing the problem into sub problems and again dividing that sub problem in sub problems.basically we are using Divide and Conquer method.\\
 \\ This report further contains - 
-\begin{itemize}
-    \item Algorithm Description.
+\renewcommand{\labelenumi}{\Roman{enumi}}
+\begin{enumerate}
+\setcounter{enumi}{1}
+    \item Algorithm Design.
     \item Algorithm And  Analysis.
-    \item Time Complexity Analysis 
-    \item Conclusion\
-\end{itemize}
+    \item Time Calculation
+    \item Time Complexity
+    \item References\\
+\end{enumerate}
 
 \section{ALGORITHM DESIGN}\\
-We are given an $array$ of some numbers and we need to find weather an element $x$  is present in the array or not using ternary search.
-\\Steps for implementing the ternary search are as follows :
-\begin{itemize}
-\item Take the input $n$ from the user
-\item Input the $array$ from the user.
-\item Input the element $x$ which is needed to be checked.
-\item Apply Merge sort algorithm to sort the array.
-\item Take two variables $l$ and $r$ in which we store left index and right index.
-\item Call the recursive $ternarySearch$ function.
-\item In each call we calculate the middle two indexes by which we break down the array into $3$ equal parts.
-\item If $x$ is equal to any of $mid1$ or $mid 2$ the we return true.
-\item For each of the three sections check if $x$ lies in that range, if it does then again we call the recursive function, and reduce the searching region.
-\item if we reach the length of $1$ and $x$ is not found we return $false$.
-\item Finally if the recursive function returns $true$ we print element found in the array else print element not found.
+We are given two integers as input i.e. \begin{math}
+M\end{math} and \begin{math}
+N\end{math}. where \begin{math}
+N\end{math} is the length of sequence and \begin{math}
+M\end{math} is the number where greatest number in the sequence is less than or equal to \begin{math}
+M\end{math}. if \begin{math}
+M\end{math} is present in the sequence then it must be present at the last element of sequence. As per the given condition the n-th value of the sequence can be at most \begin{math}
+M\end{math}.\\\\
+Now there are two possible cases for the n-th element:
+\renewcommand{\labelenumi}{\alph{enumi}}
+\begin{enumerate}
+ \setcounter{enumi}{0}
+    \item If the last element i.e. n-th element is m, then the \begin{math}
+(N-1)th\end{math} element is at most \begin{math}
+M/2\end{math}. So We recur for \begin{math}
+M/2\end{math} and \begin{math}
+(N-1)\end{math}.
+    \item If the last element is not m, then the last element is at most m-1. We recur for \begin{math}
+(M-1)\end{math} and \begin{math}
+N\end{math}.\\
+\end{enumerate}
+The total number of sequences is the sum of the number of sequences including m and the number of sequences where m is not included.\\ 
+Thus the original problem of finding number of sequences of length N with max value M can be subdivided into independent sub problems of finding number of sequences of length N with max value M-1 and number of sequences of length N-1 with max value M/2.\\
+\\\textbf{Step1 :}
+take \begin{math}
+2\end{math} numbers \begin{math}
+M\end{math} and \begin{math}
+N\end{math} as input from user .\begin{math}
+N\end{math} is length of sequence and no other element in the sequence is greater than \begin{math}
+M\end{math}. if \begin{math}
+M\end{math} is present in the sequence then it is present only at the last position. 
+\\\\\textbf{Step2 :}
+call the function:\\ 
+TotalNumberOfSequence(\begin{math}
+M\end{math}, \begin{math}
+N\end{math})
+\\\\\textbf{Step3 :}
+in the function, check whether \begin{math}M\end{math} is greater than \begin{math}N\end{math} or not. If m is smaller than \begin{math}N\end{math} then return 0, as  n is more than the maximum value \begin{math}
+M\end{math}.\\
+If \begin{math}N\end{math} is 0, then the sequence is empty,  Return 1
+\\\\\textbf{Step4 :}
+now there are 2 possibilities :
+\begin{enumerate}
+    \item Reduce  last element value i.e. call the function TotalNumberOfSequence(\begin{math}
+M-1\end{math}, n)
+    \item Consider last element as \begin{math}M\end{math} and reduce number of terms i.e. call the function TotalNumberOfSequence(\begin{math}
+M/2\end{math}, \begin{math}N-1\end{math})
+\end{enumerate}
+\\\\\textbf{Step5 :}
+print the total no of sequences 
 
-\end{itemize}
+\graphicspath{ {./images/} }
+\\\\Recursive Tree for \begin{math}M=10\end{math} and \begin{math}N\end{math} = 4
+\includegraphics[scale=0.35]{One}
 
-\\\\\textbf{\textit{Advantages of using merge sort:- }}
- It is quicker for larger lists because unlike 
-insertion and bubble sort it doesn't go through the 
-whole list several times. 
-It has a consistent running time, carries out 
-different bits with similar  times in a stage. 
+
+
 \section{ALGORITHM AND ANALYSIS}\\
-\begin{algorithm}[H]
-      \caption{Algorithm for ternary Sort}
-    \KwIn{Size of array, array and element $x$}
-    \KwOut {True if $x$ is present otherwise false.}
+
+\begin{algorithm}[H] 
+    \caption{Algorithm 1: }
+    \KwIn{two numbers \begin{math}
+M\end{math} and \begin{math}
+N\end{math}}
+    \KwOut {Total number of possible sequences}
     \DontPrintSemicolon
-    \SetKwFunction{FMain}{ternarySort}
+    \SetKwFunction{FMain}{TotalSequences}
     \SetKwProg{Fn}{Function}{:}{}
-    \Fn{\FMain{int $arr$,int $l$,int $r$,int $x$}}{
-       $ mid1 \gets  l+(r-l)/3$;
-        \\$ mid2 \gets  l+(r-l)/3$;
-        
-            \If{$l>r$}{
-            \KwRet $false$}
-            \If{$(arr[mid1] == x$ \textit{ or } $arr[mid2] == x)$}{
-               \KwRet $true$ ;
-            }
-            \ElseIf{$x < ar[mid1]$}{
-		        \KwRet $ternarySearch(l, mid1 - 1, x, ar)$;
-            }
-            \ElseIf{$x < ar[mid1]$}{
-		       \KwRet $ternarySearch(l,mid1-1,x,ar)$;
-            }
-            \ElseIf{$x < ar[mid2]$}{
-		        \KwRet $ternarySearch(mid1+1,mid2-1,x,ar)$;
-            }
-            \Else{
-            \KwRet $ternarySearch(mid2 + 1, r, x, ar)$;
-            }
-
-}
-\end{algorithm}
-% \pagebreak
-
-
-
-
-
+    \Fn{\FMain{$int$ $m$, $int$ $n$}}{
    
+  \If{$M < N$}{
+            \KwRet $0$}
+        \If{$N == 1$}{
+            \KwRet $1$}
+        \If{$dp[M][N] != -1$}{
+            \KwRet $DP[M][N]$}
+   \\\KwRet TotalSequences (\begin{math}M-1\end{math},\begin{math}N\end{math}) + TotalSequences (\begin{math}M/2\end{math}, \begin{math}N-1\end{math})\;
+   
+   }
+    \SetKwFunction{FMain}{Main}
+    \SetKwProg{Fn}{Function}{:}{}
+    \Fn{\FMain{}}{
+         
+         \\\text{Get $M$;}
+          \\\text{Get $N$;}
+          \\ \textbf{int} DP[M][N]={-1}
+          \\\textbf{Print}
+          \text{(TotalSequences($M$, $N$))}
+        
+         
+}
+ 
+\end{algorithm}\\
+\\
+\begin{algorithm}[H] 
+    \caption{Algorithm 2: Dynamic Programming}
+    \KwIn{two numbers \begin{math}
+M\end{math} and \begin{math}
+N\end{math}}
+    \KwOut {Total number of possible sequences}
+    \DontPrintSemicolon
+    \SetKwFunction{FMain}{TotalSequences}
+    \SetKwProg{Fn}{Function}{:}{}
+    \Fn{\FMain{$int$ $M$, $int$ $N$}}{
+    
+    
+    \\ \textbf{int} DP[M+1][N+1];\\
+    \For{$i \gets 0$ \textbf{ to } $M$}
+                 {
+                  \For{$j \gets 0$ \textbf{ to } $N$}
+                  {
+                    \\ \textbf{if} i==0 || j==0;
+                      \\ \textbf{then} DP[i][j] = 0;\\\\
+                      
+                      \\ \textbf{else if} i < j;
+                      \\ \textbf{then} DP[i][j] = 0;\\
+                      
+                       \\ \textbf{else if} j == 1;
+                      \\ \textbf{then} DP[i][j] = i;\\
+                      
+                       \\ \textbf{else}
+                      \\ \text{DP[i][j] = DP[i-1][j] + DP[i/2][j-1];} 
+                  }
+                
+                }
+                 \\ \textbf{return}
+                       \text{DP[M][N];} 
+   }
+    \SetKwFunction{FMain}{Main}
+    \SetKwProg{Fn}{Function}{:}{}
+    \Fn{\FMain{}}{
+         
+         \\\text{Get $M$;}
+          \\\text{Get $N$;}
+          \\ \textbf{int} DP[M][N]={-1}
+          \\\textbf{Print}
+          \text{(TotalSequences($M$, $N$))}
+        
+         
+}
+ 
+\end{algorithm}
+
+\\
+
+
+
+
 \section{TIME CALCULATION }\\
+The total number of sequences is the sum of the number of sequences including m and the number of sequences where m is not included. Thus the original problem of finding number of sequences of length \begin{math}N\end{math} with max value \begin{math}M\end{math} can be subdivided into independent sub-problems of finding number of sequences of length n with max value \begin{math}M-1\end{math} and number of sequences of length \begin{math}N-1\end{math} with max value \begin{math}M/2\end{math}.
+\begin{center}
 \begin{tikzpicture}[trim left=0.3cm]
 \begin{axis}[
-    title={Complexity analysis for Naive \begin{math} \mathcal{O}(n\log_{3}n)\end{math}) algorithm},
-    xlabel={size of input},
-    ylabel={Number of operations},
+    title={Complexity analysis for Dynamic programming approach},
+    xlabel={Time taken to execute (ms)},
+    ylabel={Value of \begin{math}N*M\end{math} (in thousands)},
      xmin=0, xmax=100,
     ymin=0, ymax=10,
     xtick={0,10,20,30,40,50,60,70,80,90,100},
@@ -141,53 +232,34 @@ different bits with similar  times in a stage.
     mark=dot,
     ]
     coordinates {
-    (0,0)(5,1.451)(22,2.8)(30,3.1)(40,3.362)(60,3.7)(100,4.192);
+    (0,0)(10,0.51)(20,1.03)(30,1.5)(40,2)(60,3)(100,5);
     };
-    \legend{\begin{math} \mathcal{O}(\log_{3}n)\end{math}) algorithm}
+    \legend{\begin{math}\mathcal{O}(N*M)\end{math} algorithm}
    \end{axis}
-   
 \end{tikzpicture}
+\end{center} 
 
-As the algorithm is logarithmic so it is a quite efficient algorithm, only very few operations are required to perform a check over a large array.
-
-\\\\
 \section{TIME COMPLEXITY}\\
-Let the average size of all strings be N.
-Then we merge sort the string in ascending and 
-descending order and compare the obtained strings 
-with the original string, and if the string matches 
-with any of the sorted strings then we increment the 
-answer.\\ 
-The time complexity will be \begin{math} \mathcal{O}(n\log{}n)\end{math}) due to the 
-merge sort algorithm in a best, average and worst 
-case.\\ 
-The time complexity will be affected due to the 
-merge sort in sorting the 1D array and the total 
-time complexity will become \begin{math} \mathcal{O}(n\log{}n)\end{math}.
-
-Here we study the complexity for ternary Sort,as the average cost of a successful search is about the same as the worst case where an item is not found in the array, both being roughly equal to \begin{math} \mathcal{O}(\log_{3}N)\end{math}. So, the average and the worst case cost of binary search, in big-O notation, is \begin{math} \mathcal{O}(\log_{3}N)\end{math}, the best case is when in the first attempt $x$ is found,so best case time complexity is \begin{math} \mathcal{O}(1)\end{math}.
-
 \begin{center}
  \begin{tabular}{||c c c||} 
  \hline
   BEST & AVERAGE & WORST CASE  \\  
  \hline\hline
- \begin{math} \mathcal{O}(1)\end{math} & \begin{math} \mathcal{O}(\log_{3}N)\end{math} & \begin{math} \mathcal{O}(\log_{3}N)\end{math} \\ 
+ \begin{math} \mathcal{O}(M*N)\end{math} & \begin{math} \mathcal{O}(M*N)\end{math} & \begin{math} \mathcal{O}(M*N)\end{math} \\ 
  \hline
 \end{tabular}
 \end{center}
 
-
-
 \section{CONCLUSION}
-Ternary search is a divide and conquer algorithm that can be used to find an element in an array. It is similar to binary search where we divide the array into two parts but in this algorithm, we divide the given array into three parts and determine which has the key (searched element). We can divide the array into three parts by taking mid1 and mid2 which can be calculated as shown below. Initially, l and r will be equal to 0 and n-1 respectively, where n is the length of the array. \\
-\\
-From the results it can be concluded that Ternary Search Algorithm is working well for all length of input values. It takes lesser CPU time than existing searching algorithm linear search and binary search. In the future more effective searching algorithm can be proposed.
+The above problem can be solved by using Dynamic Programming also. but the most efficient way is the divide and conquer.
+We can conclude from our model that the running time
+of our algorithm is O(M*N). We have tested our Algorithm
+Theoretically and experimentally and both yielded similar results. 
+the above problem can be solved by using Dynamic Programming also. but the most efficient way is the divide and conquer.
 
 \section{REFERENCES}
 \begin{enumerate}
-    \item \url{  https://doc.lagout.org/Alfred%20V.%20Aho%20-%20Data%20Structures%20and%20Algorithms.pdf }
-    \item \url{ https://web.ist.utl.pt/~fabio.ferreira/material/asa/clrs.pdf }
-    \item \url{ https://www.geeksforgeeks.org/ternary-search/}
+    \item \url{https://www.geeksforgeeks.org/sequences-given-length-every-element-equal-twice-previous/}
+    \item \url{https://tutorialspoint.dev/algorithm/dynamic-programming-algorithms/sequences-given-length-every-element-equal-twice-previous }
 \end{enumerate}
 \end{document}
