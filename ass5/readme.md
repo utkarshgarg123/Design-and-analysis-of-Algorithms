@@ -54,11 +54,12 @@ LENGTH OF LONGEST SNAKE SEQUENCE
 A matrix of integers of size n*m is given, our algorithm should find the longest snake sequence from the matrix. If
 there exist many, it should print any one. There are some
 constraints for making snake sequence,
-  1. snake sequence is made up of adjacent numbers in the
-grid.
-  2. for each number, adjacent number on the right or below
-should be +1 or -1 of its value.
-* Matrix: Two dimensional arrays are called matrices. Dynamic
+  * snake sequence is made up of adjacent numbers in the
+    grid.
+  * for each number, adjacent number on the right or below
+    should be +1 or -1 of its value.
+
+Matrix: Two dimensional arrays are called matrices. Dynamic
 Programming: It is an algorithmic technique for solving
 an optimization problem by breaking it down into simpler
 sub-problems and utilizing the fact that the optimal solution
