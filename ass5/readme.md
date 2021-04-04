@@ -58,7 +58,7 @@ constraints for making snake sequence,
 grid.
   2. for each number, adjacent number on the right or below
 should be +1 or -1 of its value.
-Matrix: Two dimensional arrays are called matrices. Dynamic
+* Matrix: Two dimensional arrays are called matrices. Dynamic
 Programming: It is an algorithmic technique for solving
 an optimization problem by breaking it down into simpler
 sub-problems and utilizing the fact that the optimal solution
